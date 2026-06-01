@@ -31,8 +31,8 @@ git clone https://github.com/etxsA/fullstack-agent-workflow
 PLAYBOOK.md          # master methodology (phases, gitflow, gates, security, tooling)
 knowledge/           # decisions · tech-matrix · optionals · conventions · verification
                      # · integrations · gotchas · tooling · deploy-gcp
-templates/           # CLAUDE.md · IMPLEMENTATION_PLAN · .gitignore · .env.example
-                     # · http.ts · errors.ts · queryClient.ts · authStore.ts
+templates/           # CLAUDE.template.md · IMPLEMENTATION_PLAN.template.md · gitignore.template
+                     # · .env.example · http.ts · errors.ts · queryClient.ts · authStore.ts
 stacks/
   frontend-expo.md · frontend-vite-react.md · frontend-nextjs.md
   backend-quarkus/   basic.md · advanced.md · modules/{spatial,ai-llm,reports,testing-native,messaging}.md

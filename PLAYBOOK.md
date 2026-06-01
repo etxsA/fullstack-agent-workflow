@@ -81,7 +81,7 @@ Detail: `knowledge/tooling.md`.
 ```
 PLAYBOOK.md                  # this file
 knowledge/                   # the distilled context (decisions, conventions, gotchas, …)
-templates/                   # portable building blocks (CLAUDE.md, http.ts, .gitignore, …)
+templates/                   # portable building blocks (CLAUDE.template.md, http.ts, gitignore.template, …)
 stacks/                      # opinionated presets (frontend + backend basic/advanced + modules)
 .claude/
   ├── skills/                # /new-fullstack, scaffold-*, add-feature, add-optional, verify-phase, ship-release
