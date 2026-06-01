@@ -20,7 +20,7 @@ It is NOT a frozen template: it adapts to the chosen stack and surfaces the opti
 
 1. **Plan first, build on approval.** Before code: produce a thorough `IMPLEMENTATION_PLAN.md` + a `CLAUDE.md` for the target project. Wait for explicit approval.
 2. **Phases.** Slice the work into numbered phases (bootstrap → core infra → auth → … → tests → docs/release). One phase = one deliverable.
-3. **One PR per phase** via the GitHub CLI (`gh`), merged into `develop`. Report between phases; the user can interrupt.
+3. **One PR per phase** via the GitHub CLI (`gh`). The **agent creates AND merges** the PR itself (`gh pr merge --merge --delete-branch`) — the user never has to merge. Report after each phase; the user can interrupt. (Pause for approval only on phases the user explicitly names.)
 4. **Branch FIRST.** After each merge you land on `develop` — immediately `git checkout -b feature/<next>` before editing. Never commit on `develop`/`main`.
 5. **Decisions via `AskUserQuestion`** when a choice changes what you build; otherwise pick the documented default and state it.
 6. **Cite docs, don't guess.** Use Context7 for any library/framework/CLI/API; use Figma MCP for design.
@@ -33,9 +33,9 @@ See `knowledge/conventions.md` for the full set.
 
 - `main` = releases only (never commit directly). `develop` = integration. `feature/*` off `develop`.
 - `release/x.y.z` off `develop` → merge `main` + tag. `hotfix/x.y.z` off `main` → merge `main` + `develop`.
-- **All PRs created + merged via `gh`** (no GitHub web UI assumed).
-- **Never add an AI co-author** to commits.
-- Commit/push only when asked (or per the agreed phase cadence).
+- **All PRs created + merged by the agent via `gh`** (no GitHub web UI, no human merge step assumed).
+- **Never add an AI co-author** to commits (no `Co-Authored-By`, no "Generated with" line).
+- Commit/push per the agreed phase cadence.
 
 ---
 
