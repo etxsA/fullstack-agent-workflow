@@ -54,7 +54,7 @@ Every project is built spec-first, one phase = one branch = one PR, and **the ag
 ```mermaid
 sequenceDiagram
     participant U as You
-    participant CC as Claude (in the repo)
+    participant CC as Claude
     participant GH as GitHub
     U->>CC: /new-fullstack
     CC->>U: interview (per concern) + plan
@@ -62,11 +62,11 @@ sequenceDiagram
     loop one per phase
         CC->>CC: branch feature/* off develop
         CC->>CC: build (scaffold-* / add-feature / add-optional)
-        CC->>CC: verify-phase (tsc/build · mvnw test · live API smoke)
-        CC->>GH: gh pr create  →  gh pr merge (agent merges)
-        CC->>U: report; you may interrupt
+        CC->>CC: verify-phase (tsc/build, mvnw test, live API smoke)
+        CC->>GH: gh pr create + merge (agent owns)
+        CC->>U: report — you may interrupt
     end
-    CC->>GH: ship-release → main + tag, deploy
+    CC->>GH: ship-release, tag, deploy
 ```
 
 Gates per phase live in `knowledge/verification.md`; the secret-guard hook blocks any commit that stages secrets.
