@@ -4,6 +4,8 @@ A reusable **Claude Code workflow** to spin up tailored fullstack projects follo
 
 Drop it into a new session, run **`/new-fullstack`**, answer a short interview, and it generates the project's plan + `CLAUDE.md` + structure and (optionally) drives the build phase by phase.
 
+📖 **[USAGE.md](USAGE.md)** — full how-to with flow diagrams (single-repo and multi-repo). Start there.
+
 ---
 
 ## Why
@@ -25,7 +27,10 @@ git clone https://github.com/etxsA/fullstack-agent-workflow
 /new-fullstack
 ```
 
-### What a session looks like
+### Multi-repo workspace in one run
+Want separate backend + frontend (and maybe mobile) repos? Run **`/init-workspace`** once from a parent folder: it creates a folder per repo, seeds each with `.claude/` + git `develop` + a GitHub remote + a `START_HERE.md`, and writes a top-level `WORKSPACE.md` (repo map + build order + CORS facts). Then open a Claude session in each folder — it reads `START_HERE.md` and runs `/new-fullstack` on rails. (Skip Expo = just don't select mobile.)
+
+### What a single-repo session looks like
 1. `/new-fullstack` interviews you per concern (project type → frontend state/cache/styling/auth/tests → backend tier/modules/deploy), defaulting from `knowledge/tech-matrix.md`.
 2. It gathers assets (backend URL, Firebase config, Figma key, test users) and generates `IMPLEMENTATION_PLAN.md` + `CLAUDE.md` + the structure + the `templates/` building blocks.
 3. On your approval it drives the build **phase by phase**: `scaffold-frontend`/`scaffold-backend` (Phase 0), then one `feature/*` branch + PR per phase, each gated by `verify-phase` and **created + merged by the agent** (never co-authored). `add-feature` / `add-optional` extend it; `ship-release` cuts the tagged release.
@@ -43,8 +48,8 @@ stacks/
   frontend-expo.md · frontend-vite-react.md · frontend-nextjs.md
   backend-quarkus/   basic.md · advanced.md · modules/{spatial,ai-llm,reports,testing-native,messaging}.md
 .claude/
-  skills/            new-fullstack · scaffold-frontend · scaffold-backend · add-feature
-                     · add-optional · verify-phase · ship-release
+  skills/            init-workspace · new-fullstack · scaffold-frontend · scaffold-backend
+                     · add-feature · add-optional · verify-phase · ship-release
   hooks/             secret-guard.sh   # blocks commits that stage secrets/private docs
   settings.json      # PreToolUse(Bash) → secret-guard pre-commit hook
 ```
