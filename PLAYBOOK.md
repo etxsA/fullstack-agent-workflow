@@ -84,7 +84,7 @@ knowledge/                   # the distilled context (decisions, conventions, go
 templates/                   # portable building blocks (CLAUDE.template.md, http.ts, gitignore.template, …)
 stacks/                      # opinionated presets (frontend + backend basic/advanced + modules)
 .claude/
-  ├── skills/                # /new-fullstack, scaffold-*, add-feature, add-optional, verify-phase, ship-release
+  ├── skills/                # /init-workspace (multi-repo bootstrap), /new-fullstack, scaffold-*, add-feature, add-optional, verify-phase, ship-release
   └── settings.json          # hooks (secret-guard) + reminders
 ```
 
