@@ -1,0 +1,38 @@
+# Copy to the target project root as `.gitignore`.
+# Public-repo baseline: keep ALL credentials and context docs out of git.
+
+# --- Secrets & private context (NEVER commit) ---
+.env
+.env.*
+!.env.example
+CLAUDE.md
+IMPLEMENTATION_PLAN.md
+# native Firebase credentials
+google-services.json
+GoogleService-Info.plist
+# backend service-account JSON (any name)
+*service-account*.json
+firebase-*.json
+firebase-adminsdk*.json
+
+# --- Dependencies / build output ---
+node_modules/
+dist/
+build/
+target/
+.expo/
+web-build/
+*.log
+
+# --- Tooling ---
+.codegraph/
+.DS_Store
+.idea/
+.vscode/
+coverage/
+
+# Notes:
+# - `.env.example` is the ONLY env file tracked; it holds placeholders only.
+# - CLAUDE.md / IMPLEMENTATION_PLAN.md are gitignored because they hold config + test creds.
+#   The tracked agent note is AGENTS.md (no secrets).
+# - Backend (Quarkus): also ignore src/main/resources/firebase-*.json and any local .env.
