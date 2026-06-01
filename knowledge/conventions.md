@@ -4,9 +4,9 @@ The house style. Applies to every project built with this workflow.
 
 ## Gitflow & process
 - `main` (releases) ← `develop` (integration) ← `feature/*`. `release/x.y.z`, `hotfix/x.y.z` as in standard gitflow.
-- **One PR per phase**, created + merged via `gh`. Report between phases.
+- **One PR per phase.** The **agent owns the full PR lifecycle**: it creates the PR via `gh` **and merges it itself** into `develop` (`gh pr merge --merge --delete-branch`), then reports. The user never has to touch GitHub. (Pause for approval only on phases the user explicitly names.)
 - **Branch first** after every merge (you land on `develop`). Never commit on `develop`/`main`.
-- **Never** add an AI co-author. Commit/push only when asked or per the agreed cadence.
+- **Never** add an AI co-author (no `Co-Authored-By` trailer, no "Generated with" line). Commit/push per the agreed phase cadence.
 - Commit messages: Conventional Commits (`feat:`, `fix:`, `chore:`, `docs:`, `test:`). Subject ≤ ~72 chars; body explains the "why".
 
 ## Frontend (TS) structure
