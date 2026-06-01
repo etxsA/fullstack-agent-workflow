@@ -15,6 +15,9 @@ Turns this workflow repo (`knowledge/`, `templates/`, `stacks/`, sibling skills)
 - **The agent owns the full PR lifecycle** (creates AND merges every phase PR via `gh`; never co-authors). See `knowledge/conventions.md`.
 
 ## 1. Interview (per concern — use AskUserQuestion; recommended option first, labeled "(Recommended)")
+
+> **Identical-stack guarantee:** every default below is the exact choice from the reference projects (Expo mobile, Vite+React web, Quarkus basic `to-do`, Quarkus advanced `back-plaguie`). **Accepting all recommended defaults reproduces the reference stack 1:1** — same libraries, versions, structure, conventions, gates. The interview only exists to let the user *deviate*; a user who just wants "the same stack as these" can accept every default. Offer a fast path: "Reproduce the reference stack (all defaults)?" up front.
+
 Walk the decision tree from `knowledge/tech-matrix.md`. Only ask what changes the build; for everything else take the documented default and state it. Order:
 
 1. **Project type** — mobile · web · both · backend-only.
