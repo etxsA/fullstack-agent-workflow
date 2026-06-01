@@ -18,7 +18,7 @@ Per-stack scaffold + deps + structure + gotchas + gates. The `/new-fullstack` in
 ### Optional modules (advanced tier)
 | Module | Adds |
 |---|---|
-| [`messaging.md`](backend-quarkus/modules/messaging.md) | Kafka + RabbitMQ (SmallRye) — built from real source |
+| [`messaging-kafka.md`](backend-quarkus/modules/messaging-kafka.md) | Kafka + RabbitMQ (SmallRye) — built from real source |
 | [`spatial.md`](backend-quarkus/modules/spatial.md) | JTS/GPS geometry — built from real source |
 | [`testing-native.md`](backend-quarkus/modules/testing-native.md) | full test matrix + GraalVM native — built from real source |
 | [`ai-llm.md`](backend-quarkus/modules/ai-llm.md) | LLM provider port — stub/extension point |

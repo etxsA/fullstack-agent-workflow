@@ -1,6 +1,6 @@
 # Module — Report export (XLSX / PDF)
 
-> **Stub.** Mentioned but not built in the source projects; optional module. Generate downloadable spreadsheets/documents on Quarkus. Confirm POI/PDFBox APIs via Context7 before building.
+> **Distillable from real source** (currently a sketch). The `back-plaguie` project has a real `ReporteExporter` (Apache POI / PDFBox) — read that Java file to upgrade this preset from sketch to a full, code-backed module. Generate downloadable spreadsheets/documents on Quarkus. Confirm POI/PDFBox APIs via Context7 before building.
 
 ## When to pick
 Users need downloadable reports (orders, inventory, summaries). Advanced backend preset.

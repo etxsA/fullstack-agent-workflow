@@ -23,7 +23,7 @@ Keep `cloudbuild.yaml` + `Dockerfile` + `docs/ci-cd.md` in sync. Flow: feature �
 - **H2 vs MySQL geo:** drop `columnDefinition="POINT"` from spatial columns — H2 rejects `POINT` DDL; MySQL `update` strategy is unaffected. (See `modules/spatial.md`.)
 
 ## Optional modules
-`modules/spatial.md` · `modules/ai-llm.md` · `modules/reports.md` · `modules/messaging.md` · `modules/testing-native.md`. Each is usually its own phase + PR (`../../knowledge/optionals.md`).
+`modules/spatial.md` · `modules/ai-llm.md` · `modules/reports.md` · `modules/messaging-kafka.md` · `modules/testing-native.md`. Each is usually its own phase + PR (`../../knowledge/optionals.md`).
 
 ## Verification gates
 ```bash

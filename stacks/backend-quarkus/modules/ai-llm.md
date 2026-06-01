@@ -1,6 +1,6 @@
-# Module — AI / LLM provider (extension point)
+# Module — AI / LLM provider
 
-> **Stub.** Not present in the source projects; included as an optional module. Pluggable LLM client for chat/completion/embeddings on Quarkus. Confirm the chosen SDK's API via Context7 before building.
+> **Distillable from real source** (currently a sketch). The `back-plaguie` project has a real `GeminiHttpClient` (provider HTTP client + provider abstraction + a mocked test) — read those Java files to upgrade this preset from sketch to a full, code-backed module. Pluggable LLM client for chat/completion/embeddings on Quarkus. Confirm the chosen SDK's API via Context7 before building.
 
 ## When to pick
 AI features: summaries, classification, semantic search, chat. Advanced backend preset.
