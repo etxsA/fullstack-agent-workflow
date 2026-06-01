@@ -25,6 +25,12 @@ git clone https://github.com/etxsA/fullstack-agent-workflow
 /new-fullstack
 ```
 
+### What a session looks like
+1. `/new-fullstack` interviews you per concern (project type → frontend state/cache/styling/auth/tests → backend tier/modules/deploy), defaulting from `knowledge/tech-matrix.md`.
+2. It gathers assets (backend URL, Firebase config, Figma key, test users) and generates `IMPLEMENTATION_PLAN.md` + `CLAUDE.md` + the structure + the `templates/` building blocks.
+3. On your approval it drives the build **phase by phase**: `scaffold-frontend`/`scaffold-backend` (Phase 0), then one `feature/*` branch + PR per phase, each gated by `verify-phase` and **created + merged by the agent** (never co-authored). `add-feature` / `add-optional` extend it; `ship-release` cuts the tagged release.
+4. The `secret-guard` hook blocks any commit that stages `.env`, `CLAUDE.md`, service-account/Firebase JSON, or secret-looking values.
+
 ## Structure
 
 ```
@@ -39,7 +45,8 @@ stacks/
 .claude/
   skills/            new-fullstack · scaffold-frontend · scaffold-backend · add-feature
                      · add-optional · verify-phase · ship-release
-  settings.json      # hooks (secret-guard) + reminders
+  hooks/             secret-guard.sh   # blocks commits that stage secrets/private docs
+  settings.json      # PreToolUse(Bash) → secret-guard pre-commit hook
 ```
 
 ## Stacks covered
@@ -52,4 +59,4 @@ stacks/
 
 Gitflow (`main`/`develop`/`feature/*`, PRs via `gh`), spec-driven phased builds (one PR per phase), verification gates (`tsc`, build, live API smoke tests), public-repo security (gitignored secrets, secret-guard), and tooling rules (codegraph, Context7, Figma MCP). See `PLAYBOOK.md`.
 
-> Built incrementally on `develop` via one PR per phase. See the repo's merged PRs for history.
+> Built incrementally on `develop` via one PR per phase (each created + merged by the agent). All five build areas — `knowledge/`, `templates/`, `stacks/`, `.claude/skills/`, `.claude/` hooks — are in place. See the repo's merged PRs for history.
