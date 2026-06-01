@@ -4,6 +4,8 @@ A reusable **Claude Code workflow** to spin up tailored fullstack projects follo
 
 Drop it into a new session, run **`/new-fullstack`**, answer a short interview, and it generates the project's plan + `CLAUDE.md` + structure and (optionally) drives the build phase by phase.
 
+📖 **[USAGE.md](USAGE.md)** — full how-to with flow diagrams (single-repo and multi-repo). Start there.
+
 ---
 
 ## Why
